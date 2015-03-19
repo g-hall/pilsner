@@ -71,6 +71,12 @@ class DBupdate {
         } else if ($db === 'repairs') {
             $this->sql = "UPDATE repairs
                     SET body = '{$input}', last_modified = DEFAULT";
+        } else if ($db === 'testimonials') {
+            $author = $input['author'];
+            $quote  = $input['quote'];
+            $this->sql = "UPDATE testimonials
+                    SET quote = '{$quote}', author = '{$author}', last_modified = DEFAULT
+                    WHERE id = {$id}";
         }
 
     }

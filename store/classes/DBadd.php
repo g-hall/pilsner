@@ -58,7 +58,13 @@ class DBadd {
             $src  = $input['src'];
             $this->sql = "INSERT INTO bios
                     VALUES('NULL', '{$name}', '{$body}', '{$src}', 'DEFAULT')";
+        } else if ($db === 'testimonials') {
+            $author = $input['author'];
+            $quote  = $input['quote'];
+            $this->sql = "INSERT INTO testimonials
+                    VALUES('NULL', '{$author}', '{$quote}', 'DEFAULT')";
         }
+
     }
 
     public function __construct($db, $input) {

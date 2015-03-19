@@ -76,6 +76,9 @@ if ($req->verb === 'POST') {
     if ($req->url_elements[1] === 'bios') {
         $data = $data['bio'];
         $db = 'bios';
+    } else if ($req->url_elements[1] === 'testimonials') {
+        $data = $data['testimonial'];
+        $db = 'testimonials';
     }
 
     $add = new DBadd($db, $data);
@@ -120,6 +123,9 @@ if ($req->verb === 'PUT') {
     } else if ($req->url_elements[1] === 'repairs') {
         $data = $data['repairs']['body'];
         $db = 'repairs';
+    } else if ($req->url_elements[1] === 'testimonials') {
+        $data = $data['testimonials'];
+        $db = 'testimonials';
     }
 
     if ($req->url_elements[2] !== '' ) {
@@ -159,6 +165,9 @@ if ($req->verb === 'DELETE') {
     if ($req->url_elements[1] === 'bios') {
         $data = $data['bio'];
         $db = 'bios';
+    } else if ($req->url_elements[1] === 'testimonials') {
+        $data = $data['testimonials'];
+        $db = 'testimonials';
     }
 
     if ($req->url_elements[2] !== '' ) {
