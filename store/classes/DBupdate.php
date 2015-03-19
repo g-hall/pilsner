@@ -58,7 +58,18 @@ class DBupdate {
             $this->sql = "UPDATE bios
                     SET name = '{$name}', body = '{$body}', src = '{$src}', last_modified = DEFAULT
                     WHERE id = {$id}";
+        } else if ($db === 'contact') {
+            $address   = $input['address'];
+            $city      = $input['city'];
+            $state     = $input['state'];
+            $zipcode   = $input['zipcode'];
+            $telephone = $input['telephone'];
+            $email     = $input['email'];
+            $this->sql = "UPDATE contact
+                    SET address = '{$address}', city = '{$city}', state = '{$state}', zipcode = '{$zipcode}',
+                    telephone = '{$telephone}', email = '{$email}', last_modified = DEFAULT";
         }
+
     }
 
     public function __construct($db, $input, $id) {

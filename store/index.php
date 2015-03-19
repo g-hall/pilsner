@@ -114,6 +114,9 @@ if ($req->verb === 'PUT') {
     } else if ($req->url_elements[1] === 'bios') {
         $data = $data['bio'];
         $db = 'bios';
+    } else if ($req->url_elements[1] === 'contact') {
+        $data = $data['contact'];
+        $db = 'contact';
     }
 
     if ($req->url_elements[2] !== '' ) {
