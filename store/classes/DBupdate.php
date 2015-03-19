@@ -68,6 +68,9 @@ class DBupdate {
             $this->sql = "UPDATE contact
                     SET address = '{$address}', city = '{$city}', state = '{$state}', zipcode = '{$zipcode}',
                     telephone = '{$telephone}', email = '{$email}', last_modified = DEFAULT";
+        } else if ($db === 'repairs') {
+            $this->sql = "UPDATE repairs
+                    SET body = '{$input}', last_modified = DEFAULT";
         }
 
     }

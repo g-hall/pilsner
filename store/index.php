@@ -117,6 +117,9 @@ if ($req->verb === 'PUT') {
     } else if ($req->url_elements[1] === 'contact') {
         $data = $data['contact'];
         $db = 'contact';
+    } else if ($req->url_elements[1] === 'repairs') {
+        $data = $data['repairs']['body'];
+        $db = 'repairs';
     }
 
     if ($req->url_elements[2] !== '' ) {
